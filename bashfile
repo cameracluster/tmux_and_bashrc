@@ -1,0 +1,20 @@
+# PS1='[\W]\$ '
+# alias grep='grep --color=auto'
+# alias ls='ls --color=auto'
+
+
+
+############################################################
+session_name="0"
+
+# Create the session if it doesn't exist
+if ! tmux has-session -t="$session_name" 2>/dev/null; then
+  TMUX='' tmux new-session -d -s "$session_name"
+fi
+
+# Attach if not in tmux, otherwise do nothing
+if [[ -z "$TMUX" ]]; then
+  tmux attach -t "$session_name"
+fi
+############################################################
+

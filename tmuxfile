@@ -1,0 +1,18 @@
+# Start windows and panes at 1, not 0
+set  -g base-index 1
+setw -g pane-base-index 1
+
+new
+neww
+select-window -t 1
+
+set-window-option -g mode-keys vi
+
+bind -Tcopy-mode WheelUpPane    send -N1 -X scroll-up
+bind -Tcopy-mode WheelDownPane  send -N1 -X scroll-down
+
+# set-option -g default-terminal "screen-256color"
+
+set -g status-right "\"#H\""
+# (optional) Keep left side as session + windows
+set -g status-left "[#S] "
