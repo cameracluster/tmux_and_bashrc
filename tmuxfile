@@ -16,3 +16,4 @@ bind -Tcopy-mode WheelDownPane  send -N1 -X scroll-down
 set -g status-right "\"#H\""
 # (optional) Keep left side as session + windows
 set -g status-left "[#S] "
+
